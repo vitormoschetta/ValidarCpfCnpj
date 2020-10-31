@@ -6,3 +6,5 @@
 Números repetidos passam na validação básica. 
 Ex: 00000000000, 11111111111, 22222222222, etc
 Passam tanto na validação do CPF quanto do CNPJ. Por isso precisamos antes verificar se todos os caracteres são iguais, e invalidar.
+
+#### Código completo no arquivo 'Validar.cs'
