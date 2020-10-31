@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace ValidarCpfCnpj
 {
@@ -31,29 +32,15 @@ namespace ValidarCpfCnpj
         private bool TodosCaractersIguais(string doc)
         {
             char[] arr = doc.ToCharArray();
-            char caractere = 'x';
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (i == 0)
-                    caractere = arr[i];
-                else
-                {
-                    if (caractere == arr[i])
-                        caractere = arr[i];
-                    else
-                        return false;
-                }
-
-            }
-            return true;
+            return arr.All(x => x.Equals(arr.First()));
         }
 
         private bool ExisteCaractereAlfabetico(string doc)
         {
-            if (doc.Contains(@"^[a-z"))
-                return true;
-
-            return false;
+            char[] arr = doc.ToCharArray();
+            return arr
+                    .Where(x => char.IsLetter(x))
+                    .Any();
         }
 
 
