@@ -24,7 +24,7 @@ namespace ValidarCpfCnpj
                 valido = ValidarCpf(doc);
 
             if (doc.Length == 14)
-                valido = ValidarCpfCnpj(doc);
+                valido = ValidarCnpj(doc);
 
             return valido;
         }
